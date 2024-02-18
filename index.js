@@ -3,6 +3,7 @@
 import { getEaster } from './utils/moon.js';
 import logger from './utils/log.js';
 
+// https://github.com/madkarmaa/revanced-website/blob/main/src/app.scss#L36
 function buildColorsArray() {
     return []; // TODO: add logic
 }
