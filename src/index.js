@@ -15,7 +15,7 @@ const EVENTS = {
     CHRISTMAS: new EventBuilder(new Date(2024, 11, 25), DAY_IN_MINUTES, () => {}),
     VALENTINES_DAY: new EventBuilder(new Date(2024, 1, 14), DAY_IN_MINUTES, () => {}),
     HALLOWEEN: new EventBuilder(new Date(2024, 9, 31), DAY_IN_MINUTES, () => {}),
-    EASTER: new EventBuilder(getEaster(2024), DAY_IN_MINUTES, () => {}),
+    EASTER: new EventBuilder(getEaster(new Date().getFullYear()), DAY_IN_MINUTES, () => {}),
     APRIL_FOOLS: new EventBuilder(new Date(2024, 3, 1), DAY_IN_MINUTES, () => {}),
 };
 
@@ -44,11 +44,10 @@ class EventThemeChanger {
 
     #run() {
         for (const event in this.events) {
-            if (this.#areSameDate(this.events[event].date, this.today)) {
+            const EVENT = this.events[event];
+            if (this.#areSameDate(EVENT.date, this.today)) {
                 logger('Triggered ' + event + ' event!');
-
-                // TODO: add logic
-
+                EVENT.handler();
                 break;
             }
         }
@@ -60,7 +59,10 @@ class EventThemeChanger {
     }
 }
 
-if (typeof window !== 'undefined') window['EventThemeChanger'] = EventThemeChanger; // expose to browser
-if (typeof window !== 'undefined') window['EventBuilder'] = EventBuilder; // expose to browser
+if (typeof window !== 'undefined') {
+    window['EventThemeChanger'] = EventThemeChanger;
+    window['EventBuilder'] = EventBuilder;
+    window['DAY_IN_MINUTES'] = DAY_IN_MINUTES;
+}
 
-export { EventThemeChanger, EventBuilder };
+export { EventThemeChanger, EventBuilder, DAY_IN_MINUTES };
