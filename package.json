@@ -2,7 +2,7 @@
     "name": "holidays-theme-changer",
     "version": "1.0.0",
     "description": "Change the theme of your website based on the current holiday",
-    "main": "index.js",
+    "main": "src/index.js",
     "scripts": {
         "build": "npx webpack"
     },

@@ -4,7 +4,7 @@ const path = require('node:path');
 module.exports = {
     entry: './index.js',
     output: {
-        filename: 'holidays-theme-changer.js',
+        filename: 'index.web.js',
         path: path.resolve(__dirname, 'web'),
     },
     mode: 'production',
