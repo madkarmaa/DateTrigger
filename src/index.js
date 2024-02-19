@@ -11,12 +11,12 @@ const applyCssVar = (name, value) => {
 };
 
 const EVENTS = {
-    NEW_YEAR: new EventBuilder(new Date(2024, 1, 1), DAY_IN_MINUTES),
-    CHRISTMAS: new EventBuilder(new Date(2024, 11, 25), DAY_IN_MINUTES),
-    VALENTINES_DAY: new EventBuilder(new Date(2024, 1, 14), DAY_IN_MINUTES),
-    HALLOWEEN: new EventBuilder(new Date(2024, 9, 31), DAY_IN_MINUTES),
-    EASTER: new EventBuilder(getEaster(2024), DAY_IN_MINUTES),
-    APRIL_FOOLS: new EventBuilder(new Date(2024, 3, 1), DAY_IN_MINUTES),
+    NEW_YEAR: new EventBuilder(new Date(2024, 1, 1), DAY_IN_MINUTES, () => {}),
+    CHRISTMAS: new EventBuilder(new Date(2024, 11, 25), DAY_IN_MINUTES, () => {}),
+    VALENTINES_DAY: new EventBuilder(new Date(2024, 1, 14), DAY_IN_MINUTES, () => {}),
+    HALLOWEEN: new EventBuilder(new Date(2024, 9, 31), DAY_IN_MINUTES, () => {}),
+    EASTER: new EventBuilder(getEaster(2024), DAY_IN_MINUTES, () => {}),
+    APRIL_FOOLS: new EventBuilder(new Date(2024, 3, 1), DAY_IN_MINUTES, () => {}),
 };
 
 class EventThemeChanger {
@@ -60,7 +60,7 @@ class EventThemeChanger {
     }
 }
 
-if (window) window['EventThemeChanger'] = EventThemeChanger; // expose to browser
-if (window) window['EventBuilder'] = EventBuilder; // expose to browser
+if (typeof window !== 'undefined') window['EventThemeChanger'] = EventThemeChanger; // expose to browser
+if (typeof window !== 'undefined') window['EventBuilder'] = EventBuilder; // expose to browser
 
 export { EventThemeChanger, EventBuilder };
