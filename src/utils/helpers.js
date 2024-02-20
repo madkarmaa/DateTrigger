@@ -32,6 +32,7 @@ export class ColorSet {
      * @returns
      */
     static build(text, background, primary, secondary, accent) {
+        if (!(arguments.length === 5)) throw new Error('Please specify all arguments');
         return {
             '--text': text,
             '--background': background,
