@@ -33,6 +33,9 @@ export class ColorSet {
      */
     static build(text, background, primary, secondary, accent) {
         if (!(arguments.length === 5)) throw new Error('Please specify all arguments');
+        if (Array.from(arguments).some((arg) => typeof arg !== 'string'))
+            throw new Error('All arguments must be strings');
+
         return {
             '--text': text,
             '--background': background,
