@@ -7,6 +7,12 @@ export const applyCssVar = (name, value) => {
     document.documentElement.style.setProperty(name, value);
 };
 
+export const changeColorVars = (text, background, primary, secondary, accent) => {
+    Object.entries(ColorSet.build(text, background, primary, secondary, accent)).forEach(([key, val]) => {
+        applyCssVar(key, val);
+    });
+};
+
 export class ColorSet {
     /**
      * Return an object of fixed CSS variables with given values

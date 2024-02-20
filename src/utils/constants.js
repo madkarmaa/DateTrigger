@@ -1,13 +1,8 @@
 import { EventBuilder } from './eventBuilder.js';
 import { getEaster } from './moon.js';
-import { applyCssVar, ColorSet } from './helpers.js';
+import { changeColorVars } from './helpers.js';
 
 const currentYear = new Date().getFullYear();
-const changeColorVars = (text, background, primary, secondary, accent) => {
-    Object.entries(ColorSet.build(text, background, primary, secondary, accent)).forEach(([key, val]) => {
-        applyCssVar(key, val);
-    });
-};
 
 export const DAY_IN_MINUTES = 1440;
 export const DEFAULT_EVENTS = {
