@@ -6,6 +6,7 @@ import { DAY_IN_MINUTES, DEFAULT_EVENTS } from './utils/constants.js';
 
 // https://github.com/revanced/revanced-website/blob/main/src/app.scss#L36
 
+// EXPOSE TO BROWSER
 if (typeof window !== 'undefined') {
     window['EventThemeChanger'] = EventThemeChanger;
     window['EventBuilder'] = EventBuilder;
