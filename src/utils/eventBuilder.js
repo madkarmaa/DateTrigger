@@ -13,7 +13,7 @@ export class EventBuilder {
         this.date = date;
         this.durationInMinutes = durationInMinutes;
         this.handler = handler;
+
+        Object.freeze(this);
     }
 }
-
-export const DAY_IN_MINUTES = 1440;
