@@ -7,11 +7,10 @@ export class EventThemeChanger {
      * @param {Record<any, EventBuilder> | {}} customEvents An object of custom events built with the EventBuilder class. **NOTE**: the key is the name of the event
      * @param {boolean} useEventsPreset Also add the default set of events
      */
-    constructor(customEvents = { ...DEFAULT_EVENTS }, useEventsPreset = false) {
+    constructor(customEvents = { ...DEFAULT_EVENTS }) {
         if (typeof customEvents !== 'object') throw new TypeError('customEvents must be an object');
         if (Object.values(customEvents).some((e) => !(e instanceof EventBuilder)))
             throw new TypeError('Every entry in customEvents must be an instance of EventBuilder');
-        if (typeof useEventsPreset !== 'boolean') throw new TypeError('useEventsPreset must be boolean');
 
         // this.today = new Date();
         this.today = new Date(2024, 0, 1);
