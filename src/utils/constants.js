@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear();
 
 export const DAY_IN_MINUTES = 1440;
 export const DEFAULT_EVENTS = {
-    NEW_YEAR: new EventBuilder(new Date(currentYear, 1, 1), DAY_IN_MINUTES, () => {
+    NEW_YEAR: new EventBuilder(new Date(currentYear, 0, 1), DAY_IN_MINUTES, () => {
         changeColorVars('#e6e8fe', '#010215', '#7082f9', '#960670', '#f62e65');
     }),
     CHRISTMAS: new EventBuilder(new Date(currentYear, 11, 25), DAY_IN_MINUTES, () => {
