@@ -1,4 +1,3 @@
-import { DEFAULT_EVENTS } from './constants.js';
 import { DateTriggerEvent } from './dateTriggerEvent.js';
 
 export class DateTriggerEventsHandler {
@@ -6,7 +5,7 @@ export class DateTriggerEventsHandler {
      * Trigger events on specific dates
      * @param {Record<any, DateTriggerEvent> | undefined} customEvents An object of DateTriggerEvent class instances. **NOTE**: the key is considered the name of the event
      */
-    constructor(customEvents = { ...DEFAULT_EVENTS }) {
+    constructor(customEvents = {}) {
         if (typeof customEvents !== 'object') throw new TypeError('customEvents must be an object');
         if (Object.values(customEvents).some((e) => !(e instanceof DateTriggerEvent)))
             throw new TypeError('Every entry in customEvents must be an instance of DateTriggerEvent');

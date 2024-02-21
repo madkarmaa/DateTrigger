@@ -2,9 +2,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const path = require('node:path');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src', 'index.js'),
+    entry: {
+        core: path.resolve(__dirname, 'src', 'index.js'),
+        presets: path.resolve(__dirname, 'src', 'presets', 'index.js'),
+    },
     output: {
-        filename: 'index.web.js',
+        filename: '[name].web.js',
         path: path.resolve(__dirname, 'build'),
     },
     mode: 'production',

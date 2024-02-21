@@ -17,7 +17,7 @@ npm install github:madkarmaa/DateTrigger
 **Browser**:
 
 ```html
-<script src="https://raw.githubusercontent.com/madkarmaa/DateTrigger/main/build/index.web.js"></script>
+<script src="https://raw.githubusercontent.com/madkarmaa/DateTrigger/main/build/core.web.js"></script>
 ```
 
 ## ❓ How to
@@ -58,8 +58,6 @@ const myEvents = {
         }
     ),
     // Add as many events as you want, and they can even be executed at the same time!
-    // Maybe you like the default set of events as well, you can import them!
-    ...DEFAULT_EVENTS,
 };
 
 // After you're done, pass the object to the DateTriggerEventsHandler class
