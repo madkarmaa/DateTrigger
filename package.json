@@ -1,7 +1,7 @@
 {
-    "name": "holidays-theme-changer",
+    "name": "datetrigger",
     "version": "1.0.0",
-    "description": "Change the theme of your website based on the current holiday",
+    "description": "Run code on specific dates",
     "main": "src/index.js",
     "scripts": {
         "build": "npx webpack"
