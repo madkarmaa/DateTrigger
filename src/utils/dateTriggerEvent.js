@@ -1,4 +1,4 @@
-export class EventBuilder {
+export class DateTriggerEvent {
     /**
      * Helper class for creating events
      * @param {Date} startDate When the event should start

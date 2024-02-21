@@ -1,15 +1,15 @@
 import { DEFAULT_EVENTS } from './constants.js';
-import { EventBuilder } from './eventBuilder.js';
+import { DateTriggerEvent } from './dateTriggerEvent.js';
 
 export class EventsHandler {
     /**
      * Trigger events on specific dates
-     * @param {Record<any, EventBuilder> | undefined} customEvents An object of EventBuilder class instances. **NOTE**: the key is considered the name of the event
+     * @param {Record<any, DateTriggerEvent> | undefined} customEvents An object of DateTriggerEvent class instances. **NOTE**: the key is considered the name of the event
      */
     constructor(customEvents = { ...DEFAULT_EVENTS }) {
         if (typeof customEvents !== 'object') throw new TypeError('customEvents must be an object');
-        if (Object.values(customEvents).some((e) => !(e instanceof EventBuilder)))
-            throw new TypeError('Every entry in customEvents must be an instance of EventBuilder');
+        if (Object.values(customEvents).some((e) => !(e instanceof DateTriggerEvent)))
+            throw new TypeError('Every entry in customEvents must be an instance of DateTriggerEvent');
 
         this.now = new Date();
         this.events = { ...customEvents };
@@ -41,11 +41,11 @@ export class EventsHandler {
 
     /**
      * Check if an event is active
-     * @param {EventBuilder} event The event to check if it's active
+     * @param {DateTriggerEvent} event The event to check if it's active
      * @returns {boolean}
      */
     #isEventActive(event) {
-        if (!(event instanceof EventBuilder)) throw new TypeError('event must be an instance of EventBuilder');
+        if (!(event instanceof DateTriggerEvent)) throw new TypeError('event must be an instance of DateTriggerEvent');
 
         const now = Date.parse(new Date());
         const eventStartTime = Date.parse(event.startDate);
