@@ -1,6 +1,8 @@
 import { DEFAULT_EVENTS } from './constants.js';
 import { EventBuilder } from './eventBuilder.js';
 
+let instance;
+
 export class EventThemeChanger {
     /**
      * Trigger events on specific dates
@@ -8,6 +10,7 @@ export class EventThemeChanger {
      * @param {boolean} useEventsPreset Also add the default set of events
      */
     constructor(customEvents = { ...DEFAULT_EVENTS }) {
+        if (instance) throw new Error('EventThemeChanger can only be instantiated once');
         if (typeof customEvents !== 'object') throw new TypeError('customEvents must be an object');
         if (Object.values(customEvents).some((e) => !(e instanceof EventBuilder)))
             throw new TypeError('Every entry in customEvents must be an instance of EventBuilder');
@@ -17,6 +20,7 @@ export class EventThemeChanger {
         this.events = { ...customEvents };
 
         Object.freeze(this);
+        instance = this;
         this.#run();
     }
 
