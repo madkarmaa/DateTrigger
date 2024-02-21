@@ -1,10 +1,6 @@
-// https://github.com/ReVanced/revanced-website/issues/226
-
 import { EventBuilder } from './utils/eventBuilder.js';
 import { EventsHandler } from './utils/eventsHandler.js';
 import { DAY_IN_MINUTES, DEFAULT_EVENTS } from './utils/constants.js';
-
-// https://github.com/revanced/revanced-website/blob/main/src/app.scss#L36
 
 // EXPOSE TO BROWSER
 if (typeof window !== 'undefined') {
