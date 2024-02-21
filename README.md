@@ -33,7 +33,7 @@ import { ... } from 'datetrigger';
 ### Basic usage
 
 ```js
-new EventsHandler();
+new DateTriggerEventsHandler();
 ```
 
 ...and that's it! The library comes with a default set of events, which can be seen [here](https://github.com/madkarmaa/DateTrigger/blob/main/src/utils/constants.js#L8), but you can also create your own:
@@ -62,7 +62,7 @@ const myEvents = {
     ...DEFAULT_EVENTS,
 };
 
-// After you're done, pass the object to the EventsHandler class
-new EventsHandler(myEvents);
+// After you're done, pass the object to the DateTriggerEventsHandler class
+new DateTriggerEventsHandler(myEvents);
 // That's it!
 ```

@@ -1,7 +1,7 @@
 import { DEFAULT_EVENTS } from './constants.js';
 import { DateTriggerEvent } from './dateTriggerEvent.js';
 
-export class EventsHandler {
+export class DateTriggerEventsHandler {
     /**
      * Trigger events on specific dates
      * @param {Record<any, DateTriggerEvent> | undefined} customEvents An object of DateTriggerEvent class instances. **NOTE**: the key is considered the name of the event
@@ -14,12 +14,12 @@ export class EventsHandler {
         this.now = new Date();
         this.events = { ...customEvents };
 
-        if (!EventsHandler.instance) EventsHandler.instance = this;
+        if (!DateTriggerEventsHandler.instance) DateTriggerEventsHandler.instance = this;
 
         Object.freeze(this);
         this.#run();
 
-        return EventsHandler.instance;
+        return DateTriggerEventsHandler.instance;
     }
 
     #run() {
