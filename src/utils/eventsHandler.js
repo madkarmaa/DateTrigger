@@ -1,7 +1,7 @@
 import { DEFAULT_EVENTS } from './constants.js';
 import { EventBuilder } from './eventBuilder.js';
 
-export class EventThemeChanger {
+export class EventsHandler {
     /**
      * Trigger events on specific dates
      * @param {Record<any, EventBuilder> | undefined} customEvents An object of EventBuilder class instances. **NOTE**: the key is considered the name of the event
@@ -16,12 +16,12 @@ export class EventThemeChanger {
         this.today = new Date(2024, 0, 1);
         this.events = { ...customEvents };
 
-        if (!EventThemeChanger.instance) EventThemeChanger.instance = this;
+        if (!EventsHandler.instance) EventsHandler.instance = this;
 
         Object.freeze(this);
         this.#run();
 
-        return EventThemeChanger.instance;
+        return EventsHandler.instance;
     }
 
     #run() {
