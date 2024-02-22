@@ -36,7 +36,24 @@ import { ... } from 'datetrigger';
 new DateTriggerEventsHandler();
 ```
 
-...and that's it! The library comes with a default set of events, which can be seen [here](https://github.com/madkarmaa/DateTrigger/blob/main/src/utils/constants.js#L8), but you can also create your own:
+...and that's it!
+
+The library comes with a default set of events, which can be seen [here](https://github.com/madkarmaa/DateTrigger/blob/main/src/presets/index.js), and imported like such:
+
+**NodeJS**:
+
+```js
+import { DEFAULT_EVENTS } from 'datetrigger/presets';
+```
+
+**Browser**:
+
+```html
+<script src="https://raw.githubusercontent.com/madkarmaa/DateTrigger/main/build/presets.web.js"></script>
+<!-- This will expose the DEFAULT_EVENTS object to the window -->
+```
+
+...but you can also create your own:
 
 ```js
 const myEvents = {
