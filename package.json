@@ -4,8 +4,9 @@
     "description": "A simple JavaScript library to execute code on specific dates",
     "main": "src/index.js",
     "exports": {
-        ".": "./src/index.js",
-        "./presets": "./src/presets/index.js"
+        ".": "./src/",
+        "./presets": "./src/presets/",
+        "./presets.js": "./src/presets/index.js"
     },
     "scripts": {
         "build": "npx webpack"
