@@ -25,7 +25,7 @@ npm install github:madkarmaa/DateTrigger
 **NodeJS**: once the package is installed, you can import the library
 
 ```js
-import { ... } from 'datetrigger';
+import { DateTriggerEventsHandler, DateTriggerEvent } from 'datetrigger';
 ```
 
 **Browser**: you don't need to import anything, the library will expose itself to the `window` object and will be globally accessible
