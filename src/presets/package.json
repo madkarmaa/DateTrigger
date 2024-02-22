@@ -1,0 +1,9 @@
+{
+    "name": "presets",
+    "version": "1.0.0",
+    "description": "Events presets",
+    "main": "index.js",
+    "scripts": {},
+    "author": "madkarma",
+    "license": "MIT"
+}
