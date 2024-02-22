@@ -15,7 +15,8 @@
         "webpack": "^5.90.2",
         "webpack-cli": "^5.1.4"
     },
-    "workspaces": [
-        "src/presets"
-    ]
+    "exports": {
+        ".": "./src/index.js",
+        "./presets": "./src/presets/index.js"
+    }
 }
