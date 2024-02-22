@@ -3,11 +3,6 @@
     "version": "1.0.0",
     "description": "A simple JavaScript library to execute code on specific dates",
     "main": "src/index.js",
-    "exports": {
-        ".": "./src/",
-        "./presets": "./src/presets/",
-        "./presets.js": "./src/presets/index.js"
-    },
     "scripts": {
         "build": "npx webpack"
     },
@@ -19,5 +14,10 @@
         "terser-webpack-plugin": "^5.3.10",
         "webpack": "^5.90.2",
         "webpack-cli": "^5.1.4"
+    },
+    "exports": {
+        ".": "./src/",
+        "./presets": "./src/presets/",
+        "./presets.js": "./src/presets/index.js"
     }
 }
