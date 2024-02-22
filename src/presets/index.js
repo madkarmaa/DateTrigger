@@ -1,6 +1,7 @@
 import { DateTriggerEvent } from '../utils/dateTriggerEvent.js';
 import { getEaster } from '../utils/moon.js';
 import { changeColorVars } from '../utils/helpers.js';
+import { DAY_IN_MINUTES } from '../utils/constants.js';
 
 const currentYear = new Date().getFullYear();
 
