@@ -17,7 +17,7 @@ npm install datetrigger
 **Browser**:
 
 ```html
-<script src="https://raw.githubusercontent.com/madkarmaa/DateTrigger/main/build/core.web.js"></script>
+<script src="https://unpkg.com/datetrigger/build/core.web.js"></script>
 ```
 
 ## ❓ How to
@@ -49,7 +49,7 @@ import { DEFAULT_EVENTS } from 'datetrigger/presets';
 **Browser**:
 
 ```html
-<script src="https://raw.githubusercontent.com/madkarmaa/DateTrigger/main/build/presets.web.js"></script>
+<script src="https://unpkg.com/datetrigger/build/presets.web.js"></script>
 <!-- This will expose the DEFAULT_EVENTS object to the window -->
 ```
 
