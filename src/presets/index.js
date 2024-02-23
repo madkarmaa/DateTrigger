@@ -25,3 +25,5 @@ export const DEFAULT_EVENTS = {
         changeColorVars('#ceeafe', '#000910', '#7ec2fc', '#9504af', '#fa28a7');
     }),
 };
+
+if (typeof window !== 'undefined') window['DEFAULT_EVENTS'] = DEFAULT_EVENTS;
