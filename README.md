@@ -11,7 +11,7 @@ A simple JavaScript library to execute code on specific dates
 **NodeJS**:
 
 ```
-npm install github:madkarmaa/DateTrigger
+npm install datetrigger
 ```
 
 **Browser**:
