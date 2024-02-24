@@ -2,8 +2,7 @@
 
 A simple JavaScript library to execute code on specific dates
 
-> [!NOTE]
->
+> NOTE
 > This library is **fully** compatible with browsers
 
 ## ⚙️ Installation
