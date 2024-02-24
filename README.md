@@ -43,7 +43,7 @@ new DateTriggerEventsHandler();
 ```js
 const myEvents = [
     // DateTriggerEvent is a helper class for creating custom events, it has 3 parameters
-    MY_EVENT_1: new DateTriggerEvent(
+    new DateTriggerEvent(
         // The first parameter is of type Date, and it represents
         // when the event should start. In this case, it will start...
         // right now!
