@@ -3,12 +3,11 @@ const path = require('node:path');
 
 module.exports = {
     entry: {
-        core: path.resolve(__dirname, 'src', 'index.js'),
-        presets: path.resolve(__dirname, 'src', 'presets', 'index.js'),
+        core: path.resolve(__dirname, 'dist', 'index.js'),
     },
     output: {
         filename: '[name].web.js',
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'web'),
     },
     mode: 'production',
     optimization: {

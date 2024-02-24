@@ -17,7 +17,7 @@ npm install datetrigger
 **Browser**:
 
 ```html
-<script src="https://unpkg.com/datetrigger/build/core.web.js"></script>
+<script src="https://unpkg.com/datetrigger/web/core.web.js"></script>
 ```
 
 ## ❓ How to
@@ -38,25 +38,10 @@ new DateTriggerEventsHandler();
 
 ...and that's it!
 
-The library comes with a default set of events, which can be seen [here](https://github.com/madkarmaa/DateTrigger/blob/main/src/presets/index.js), and imported like such:
-
-**NodeJS**:
+### Create custom events
 
 ```js
-import { DEFAULT_EVENTS } from 'datetrigger/presets';
-```
-
-**Browser**:
-
-```html
-<script src="https://unpkg.com/datetrigger/build/presets.web.js"></script>
-<!-- This will expose the DEFAULT_EVENTS object to the window -->
-```
-
-...but you can also create your own:
-
-```js
-const myEvents = {
+const myEvents = [
     // DateTriggerEvent is a helper class for creating custom events, it has 3 parameters
     MY_EVENT_1: new DateTriggerEvent(
         // The first parameter is of type Date, and it represents
@@ -75,7 +60,7 @@ const myEvents = {
         }
     ),
     // Add as many events as you want, and they can even be executed at the same time!
-};
+];
 
 // After you're done, pass the object to the DateTriggerEventsHandler class
 new DateTriggerEventsHandler(myEvents);

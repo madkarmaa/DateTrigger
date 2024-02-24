@@ -5,7 +5,8 @@
     "repository": "https://github.com/madkarmaa/DateTrigger",
     "main": "src/index.js",
     "scripts": {
-        "build": "npx webpack"
+        "build": "npx tsc",
+        "build:web": "npx webpack"
     },
     "keywords": [],
     "author": "madkarma",

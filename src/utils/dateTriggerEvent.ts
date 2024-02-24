@@ -1,11 +1,16 @@
 export class DateTriggerEvent {
+    startDate: Date;
+    durationInMinutes: number;
+    handler: () => void;
+    endDate: Date;
+
     /**
      * Helper class for creating events
-     * @param {Date} startDate When the event should start
-     * @param {number} durationInMinutes How long the event should last for
-     * @param {Function} handler The function to call when the event triggers
+     * @param startDate When the event should start
+     * @param durationInMinutes How long the event should last for
+     * @param handler The function to call when the event triggers
      */
-    constructor(startDate, durationInMinutes, handler) {
+    constructor(startDate: Date, durationInMinutes: number, handler: () => void) {
         if (!(startDate instanceof Date)) throw new TypeError('startDate must be of type Date');
         if (typeof durationInMinutes !== 'number') throw new TypeError('durationInMinutes must be a number');
         if (typeof handler !== 'function') throw new TypeError('handler must be a function');
