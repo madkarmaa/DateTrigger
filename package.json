@@ -4,6 +4,7 @@
     "description": "A simple JavaScript library to execute code on specific dates",
     "repository": "https://github.com/madkarmaa/DateTrigger",
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc",
         "build:web": "rollup -c",
