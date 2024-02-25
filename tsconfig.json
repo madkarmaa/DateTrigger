@@ -1,13 +1,13 @@
 {
     "compilerOptions": {
-        "target": "ES2019", // or es6 if you don't need to support older browsers
-        "module": "nodenext", // use commonjs for Node.js
-        "outDir": "dist", // output directory for compiled files
-        "declaration": true, // generate .d.ts files for type information
-        "strict": true, // enable strict type checking
-        "esModuleInterop": true, // allow interoperability between CommonJS and ES modules
-        "lib": ["ES2019", "DOM"] // include necessary libraries (e.g., es2020 for modern JavaScript features and dom for browser APIs)
+        "target": "ES2019",
+        "module": "nodenext",
+        "outDir": "dist",
+        "declaration": true,
+        "strict": true,
+        "esModuleInterop": true,
+        "lib": ["ES2019", "DOM"]
     },
-    "include": ["src/**/*"], // include all files in the src directory
-    "exclude": ["node_modules"] // exclude node_modules directory
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
 }
