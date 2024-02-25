@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "es6", // or es6 if you don't need to support older browsers
-        "module": "commonjs", // use commonjs for Node.js
+        "module": "nodenext", // use commonjs for Node.js
         "outDir": "dist", // output directory for compiled files
         "declaration": true, // generate .d.ts files for type information
         "strict": true, // enable strict type checking
