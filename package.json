@@ -1,6 +1,6 @@
 {
     "name": "datetrigger",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "A simple JavaScript library to execute code on specific dates",
     "repository": "https://github.com/madkarmaa/DateTrigger",
     "main": "dist/index.js",
