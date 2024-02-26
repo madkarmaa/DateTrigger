@@ -66,7 +66,7 @@ const myEvents = [
     // Add as many events as you want, and they can even be executed at the same time!
 ];
 
-// After you're done, pass the object to the DateTriggerEventsHandler class
+// After you're done, pass the array to the DateTriggerEventsHandler class
 new DateTriggerEventsHandler(myEvents);
 // That's it!
 ```
