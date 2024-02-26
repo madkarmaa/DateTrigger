@@ -17,7 +17,8 @@ npm install datetrigger
 **Browser**:
 
 ```html
-<script src="https://unpkg.com/datetrigger/web/core.js"></script>
+<!-- type="module" is required! -->
+<script src="https://unpkg.com/datetrigger/web/core.js" type="module"></script>
 ```
 
 ## ❓ How to
