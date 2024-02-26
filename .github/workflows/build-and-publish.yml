@@ -7,9 +7,12 @@ on:
     workflow_dispatch:
 
 jobs:
-    setup:
+    build:
         runs-on: ubuntu-latest
         if: ${{ startsWith(github.event.head_commit.message, 'release:') }}
+
+        permissions:
+            contents: write
 
         steps:
             - name: Checkout repository
@@ -27,15 +30,6 @@ jobs:
             - name: Clean install dependencies
               run: npm ci
 
-    build:
-        runs-on: ubuntu-latest
-        if: ${{ startsWith(github.event.head_commit.message, 'release:') }}
-        needs: setup
-
-        permissions:
-            contents: write
-
-        steps:
             - name: Bundle web version
               run: |
                   npm run build:web
@@ -63,6 +57,21 @@ jobs:
             id-token: write
 
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up NodeJS
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+                  registry-url: 'https://registry.npmjs.org'
+
+            - name: Ensure npm is at latest version
+              run: npm install -g npm
+
+            - name: Clean install dependencies
+              run: npm ci
+
             - name: Publish to npm
               run: |
                   npm publish --provenance
