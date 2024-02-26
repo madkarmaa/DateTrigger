@@ -17,8 +17,8 @@ npm install datetrigger
 **Browser**:
 
 ```html
-<!-- type="module" is required! -->
-<script src="https://unpkg.com/datetrigger/web/core.js" type="module"></script>
+<!-- type="module" and 'defer' are required! -->
+<script src="https://unpkg.com/datetrigger/web/core.js" type="module" defer></script>
 ```
 
 ## ❓ How to
@@ -34,7 +34,10 @@ import { DateTriggerEventsHandler, DateTriggerEvent } from 'datetrigger';
 ### Basic usage
 
 ```js
-new DateTriggerEventsHandler();
+// The 'DOMContentLoaded' event listener is required or else the library will not be exposed to the window object yet
+document.addEventListener('DOMContentLoaded', () => {
+    new DateTriggerEventHandler();
+});
 ```
 
 ...and that's it!
