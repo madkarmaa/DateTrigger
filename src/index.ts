@@ -10,3 +10,4 @@ if (typeof window !== 'undefined') {
 }
 
 export { EventsHandler, getEasterDateOfYear, sameDay };
+export * from './utils/types';
