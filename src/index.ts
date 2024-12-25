@@ -1,15 +1,12 @@
-import { DateTriggerEvent } from './utils/dateTriggerEvent.js';
-import { DateTriggerEventHandler } from './utils/dateTriggerEventHandler.js';
-import { DAY_IN_MINUTES } from './utils/constants.js';
+import EventsHandler from './utils/eventsHandler';
+import { getEasterDateOfYear, sameDay } from './utils/utils';
 
 // EXPOSE TO BROWSER
 if (typeof window !== 'undefined') {
     // https://stackoverflow.com/a/38964459
-    (window as any)['DateTriggerEventHandler'] = DateTriggerEventHandler;
-    (window as any)['DateTriggerEvent'] = DateTriggerEvent;
-    (window as any)['DAY_IN_MINUTES'] = DAY_IN_MINUTES;
+    (window as any)['EventsHandler'] = EventsHandler;
+    (window as any)['getEasterDateOfYear'] = getEasterDateOfYear;
+    (window as any)['sameDay'] = sameDay;
 }
 
-export * from './utils/constants.js';
-export * from './utils/dateTriggerEventHandler.js';
-export * from './utils/dateTriggerEvent.js';
+export { EventsHandler, getEasterDateOfYear, sameDay };

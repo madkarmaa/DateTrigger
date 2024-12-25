@@ -1,13 +1,12 @@
 {
     "compilerOptions": {
-        "target": "ES2019",
-        "module": "nodenext",
-        "outDir": "dist",
-        "declaration": true,
-        "strict": true,
+        "target": "ES2022",
+        "module": "ESNext",
         "esModuleInterop": true,
-        "lib": ["ES2019", "DOM"]
-    },
-    "include": ["src/**/*"],
-    "exclude": ["node_modules"]
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "noUncheckedIndexedAccess": true,
+        "noEmit": true
+    }
 }
