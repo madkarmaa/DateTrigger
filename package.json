@@ -1,6 +1,6 @@
 {
     "name": "datetrigger",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "A simple JavaScript library to execute code on specific dates",
     "repository": "https://github.com/madkarmaa/DateTrigger",
     "main": "dist/index.js",
@@ -20,7 +20,9 @@
         "rollup": "^4.12.0",
         "terser-webpack-plugin": "^5.3.10",
         "tslib": "^2.6.2",
-        "tsup": "^8.3.5",
         "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "tsup": "^8.3.5"
     }
 }
