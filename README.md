@@ -17,7 +17,7 @@ npm install datetrigger
 **Browser**:
 
 ```html
-<!-- type="module" and 'defer' are required! -->
+<!-- type="module" is required, and 'defer' is also required if you want to interact with the DOM! -->
 <script src="https://unpkg.com/datetrigger/web/core.js" type="module" defer></script>
 ```
 
@@ -26,7 +26,7 @@ npm install datetrigger
 **NodeJS**: once the package is installed, you can import the library
 
 ```js
-import { DateTriggerEventsHandler, DateTriggerEvent } from 'datetrigger';
+import { EventsHandler } from 'datetrigger';
 ```
 
 **Browser**: you don't need to import anything, the library will expose itself to the `window` object and will be globally accessible
@@ -34,10 +34,7 @@ import { DateTriggerEventsHandler, DateTriggerEvent } from 'datetrigger';
 ### Basic usage
 
 ```js
-// The 'DOMContentLoaded' event listener is required or else the library will not be exposed to the window object yet
-document.addEventListener('DOMContentLoaded', () => {
-    new DateTriggerEventHandler();
-});
+new EventsHandler();
 ```
 
 ...and that's it!
@@ -45,28 +42,34 @@ document.addEventListener('DOMContentLoaded', () => {
 ### Create custom events
 
 ```js
+import { EventsHandler } from 'datetrigger';
+
 const myEvents = [
-    // DateTriggerEvent is a helper class for creating custom events, it has 3 parameters
-    new DateTriggerEvent(
-        // The first parameter is of type Date, and it represents
-        // when the event should start. In this case, it will start...
-        // right now!
-        new Date(),
-        // The second parameter is a number, and it represents
-        // the duration of the event in MINUTES. In this case,
-        // it will last for 10 minutes
-        10,
-        // The third parameter is a function which will be called
-        // during the duration of the event. In this case, it will
-        // simply log a message to the console
-        () => {
+    {
+        // The first property is the name of the event, of type string.
+        name: 'my custom event',
+        // The second property is the period of time in which the event will be triggered.
+        // It's of type Period, which is an object with 2 properties, "from" and "to".
+        // The following example will make the event execute for the whole month of January 2025.
+        period: {
+            // Why is the month 0? Because JavaScript counts months from 0 to 11.
+            from: new Date(2025, 0, 1),
+            // By how JavaScript handles dates, "to" is exclusive.
+            // meaning that, in the following example, the event will NOT run on the 1st of February.
+            to: new Date(2025, 1, 1),
+        },
+        // The third property is a function which will be called during the duration of the event.
+        // In this case, it will simply log a message to the console.
+        execute: () => {
             console.log('Hello there!');
-        }
-    ),
+        },
+    },
     // Add as many events as you want, and they can even be executed at the same time!
 ];
 
-// After you're done, pass the array to the DateTriggerEventsHandler class
-new DateTriggerEventsHandler(myEvents);
+// After you're done, pass the array to the EventsHandler class.
+// The events handler also has another parameter, "verbose",
+// which, if set to true, will console.log the name of the event that executes.
+new EventsHandler(myEvents, true);
 // That's it!
 ```
